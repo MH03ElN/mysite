@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -13,3 +14,10 @@ class Post(models.Model):
     # image
     # category
     # tag
+    # def __str__(self):
+    #     return self.title
+
+    class Meta:
+        ordering = ["created_date"]
+        verbose_name = "پست"
+        verbose_name_plural = "پست‌ها"
