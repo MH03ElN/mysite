@@ -97,7 +97,7 @@
 					<div class="col-lg-3  col-md-3 meta-details">
 						<ul class="tags">
 							{% for cat in post.category.all %}
-							<li><a href="#">{{cat.name}}</a></li>
+							<li><a href="{% url 'blog:category' cat.name %}">{{cat.name}}</a></li>
 							{% if not forloop.last %},{% endif %}
 							{% endfor %}
 						</ul>
@@ -164,58 +164,13 @@
 					</div>
 
 					{% include 'blog/blog-writer.html' %}
-					
+
 					{% latestposts %}
 
 					{% include 'blog/blog-ads.html' %}
 
-					<div class="single-sidebar-widget post-category-widget">
-						<h4 class="category-title">Post Catgories</h4>
-						<ul class="cat-list">
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Technology</p>
-									<p>37</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Lifestyle</p>
-									<p>24</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Fashion</p>
-									<p>59</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Art</p>
-									<p>29</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Food</p>
-									<p>15</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Architecture</p>
-									<p>09</p>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="d-flex justify-content-between">
-									<p>Adventure</p>
-									<p>44</p>
-								</a>
-							</li>
-						</ul>
-					</div>
+					{% categories %}
+
 					<div class="single-sidebar-widget newsletter-widget">
 						<h4 class="newsletter-title">Newsletter</h4>
 						<p>
