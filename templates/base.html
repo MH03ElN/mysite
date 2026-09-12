@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="وب‌سایت شخصی و رزومه‌ای یک توسعه‌دهنده وب با Django و Python">
+  <title>{% block title %}پورتفولیوی شخصی{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{% url 'website:index' %}"><span>م</span> پورتفولیو</a>
+    <button class="menu-btn" aria-label="باز کردن منو">☰</button>
+    <nav class="nav-menu">
+      <a href="{% url 'website:index' %}">خانه</a>
+      <a href="{% url 'website:about' %}">درباره من</a>
+      <a href="{% url 'website:index' %}#skills">مهارت‌ها</a>
+      <a href="{% url 'website:index' %}#projects">پروژه‌ها</a>
+      <a href="/blog/">وبلاگ</a>
+      <a class="nav-cta" href="{% url 'website:contact' %}">تماس با من</a>
+    </nav>
+  </div>
+</header>
+
+{% if messages %}
+<div class="container messages">
+  {% for message in messages %}<div class="message {{ message.tags }}">{{ message }}</div>{% endfor %}
+</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="brand" href="{% url 'website:index' %}"><span>م</span> پورتفولیو</a><p>یک وب‌سایت شخصی مدرن با Django و طراحی کاملاً فارسی.</p></div>
+    <div><h4>دسترسی سریع</h4><a href="{% url 'website:about' %}">درباره من</a><a href="/blog/">وبلاگ</a><a href="{% url 'website:contact' %}">تماس</a></div>
+    <div><h4>ارتباط</h4><p>ایمیل: hello@example.com</p><p>تهران، ایران</p></div>
+  </div>
+  <div class="copyright">© {% now "Y" %} تمامی حقوق محفوظ است.</div>
+</footer>
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

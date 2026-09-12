@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-hero small">
+  <div class="container">
+    <div class="section-label">تماس</div>
+    <h1>بیایید صحبت کنیم.</h1>
+    <p>این فرم فعلاً HTML خام است؛ اتصال آن به Django با خودت.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div>
+      <div class="contact-info"><span>ایمیل</span><strong>hello@example.com</strong></div>
+      <div class="contact-info"><span>موقعیت</span><strong>تهران، ایران</strong></div>
+    </div>
+
+    <form class="form-card" method="post" action="#">
+      <!-- TODO:
+           1) بعداً action را به URL موردنظر وصل کن.
+           2) وقتی Django Form ساختی {% csrf_token %} را اضافه کن.
+           3) فیلدهای این فرم را با form.name و ... جایگزین کن.
+      -->
+      <div class="form-row">
+        <label>نام<input type="text" name="name" placeholder="نام شما"></label>
+        <label>ایمیل<input type="email" name="email" placeholder="ایمیل شما"></label>
+      </div>
+      <label>موضوع<input type="text" name="subject" placeholder="موضوع پیام"></label>
+      <label>پیام<textarea name="message" rows="7" placeholder="پیام شما"></textarea></label>
+      <button class="btn primary" type="submit">ارسال پیام ←</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

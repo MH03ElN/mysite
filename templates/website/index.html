@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="section-label">سلام، من یک توسعه‌دهنده‌ام</div>
+      <h1>اینجا قراره<br><span>پورتفولیوی من</span> ساخته بشه.</h1>
+      <p>این صفحه عمداً به Backend وصل نشده است. تو قرار است URLها، Viewها، Modelها و داده‌های واقعی را خودت به آن اضافه کنی.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">مشاهده پروژه‌ها ←</a>
+        <a class="btn ghost" href="{% url 'website:contact' %}">با من صحبت کنید</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span>01</span>
+      <strong>یادگیری با ساختن</strong>
+      <p>از همین قالب شروع کن و قدم‌به‌قدم Django را به آن اضافه کن.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="section-label">۰۱ / درباره من</div>
+    <div>
+      <h2>این بخش را بعداً با اطلاعات واقعی خودت کامل کن.</h2>
+      <p class="lead">فعلاً تمرکز روی Template است؛ بعداً می‌توانی اطلاعات را از View یا Model دریافت کنی.</p>
+      <a class="text-link" href="{% url 'website:about' %}">بیشتر درباره من ←</a>
+    </div>
+  </div>
+</section>
+
+<section class="section muted" id="skills">
+  <div class="container">
+    <div class="section-label">۰۲ / مهارت‌ها</div>
+    <h2>مهارت‌هایی که قرار است اضافه شوند</h2>
+    <div class="skills-grid">
+      <div class="skill"><strong>Python</strong><span>Backend</span></div>
+      <div class="skill"><strong>Django</strong><span>Web Framework</span></div>
+      <div class="skill"><strong>HTML / CSS</strong><span>Frontend</span></div>
+      <div class="skill"><strong>SQL</strong><span>Database</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-label">۰۳ / پروژه‌ها</div>
+        <h2>نمونه پروژه‌ها</h2>
+      </div>
+      <!-- TODO: بعداً به صفحه پروژه‌ها متصل کن. -->
+      <a class="text-link" href="/projects/">همه پروژه‌ها ←</a>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-visual"><span>پروژه ۱</span></div>
+        <div class="project-body">
+          <div class="tags">Python · Django</div>
+          <h3>عنوان پروژه</h3>
+          <p>این متن نمونه است و بعداً می‌تواند از Model دریافت شود.</p>
+          <!-- TODO: بعداً URL جزئیات پروژه را خودت بساز. -->
+          <a href="#">مشاهده جزئیات ←</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual"><span>پروژه ۲</span></div>
+        <div class="project-body">
+          <div class="tags">Django · SQLite</div>
+          <h3>عنوان پروژه</h3>
+          <p>یک کارت نمونه برای اینکه بعداً آن را با حلقه for جایگزین کنی.</p>
+          <a href="#">مشاهده جزئیات ←</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual"><span>پروژه ۳</span></div>
+        <div class="project-body">
+          <div class="tags">HTML · CSS · JS</div>
+          <h3>عنوان پروژه</h3>
+          <p>محتوای نمونه را بعداً با داده‌های واقعی جایگزین کن.</p>
+          <a href="#">مشاهده جزئیات ←</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section muted">
+  <div class="container blog-preview">
+    <div class="section-head">
+      <div>
+        <div class="section-label">۰۴ / وبلاگ</div>
+        <h2>یادداشت‌های فنی</h2>
+      </div>
+      <!-- TODO: بعداً لینک این بخش را به صفحه وبلاگ متصل کن. -->
+      <a class="text-link" href="/blog/">همه مطالب ←</a>
+    </div>
+
+    <div class="post-grid">
+      <article class="post-card">
+        <span>یادداشت فنی</span>
+        <h3>اولین مطلب وبلاگ</h3>
+        <p>این فقط محتوای نمونه است؛ بعداً Post را از دیتابیس دریافت کن.</p>
+        <a href="#">ادامه مطلب</a>
+      </article>
+      <article class="post-card">
+        <span>یادداشت فنی</span>
+        <h3>یادگیری Django</h3>
+        <p>یک کارت ثابت که بعداً می‌تواند داخل یک حلقه قرار بگیرد.</p>
+        <a href="#">ادامه مطلب</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact-strip">
+  <div class="container contact-inner">
+    <div>
+      <div class="section-label">آماده شروع هستید؟</div>
+      <h2>بیایید یک پروژه خوب بسازیم.</h2>
+    </div>
+    <a class="btn light" href="{% url 'website:contact' %}">شروع گفتگو ←</a>
+  </div>
+</section>
+{% endblock %}
