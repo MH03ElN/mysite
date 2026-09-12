@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-hero small">
+  <div class="container">
+    <div class="section-label">وبلاگ</div>
+    <h1>یادداشت‌ها و تجربه‌ها</h1>
+    <p>فعلاً داده‌ها استاتیک هستند؛ بعداً Post را از Django دریافت کن.</p>
+    <form class="search" action="#" method="get">
+      <input name="s" placeholder="جستجو در مطالب...">
+      <button>جستجو</button>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="post-grid">
+      <article class="post-card big">
+        <span>۱۴۰۵/۰۶/۲۰</span>
+        <h2>اولین مقاله</h2>
+        <p>محتوای نمونه برای شروع طراحی صفحه وبلاگ.</p>
+        <a href="#">ادامه مطلب ←</a>
+      </article>
+      <article class="post-card big">
+        <span>۱۴۰۵/۰۶/۱۸</span>
+        <h2>یادگیری Django</h2>
+        <p>بعداً این کارت را با یک حلقه پویا کن.</p>
+        <a href="#">ادامه مطلب ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+{% endblock %}
